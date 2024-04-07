@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  llama.cpp:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./models/ggml-model-Q4_K_M.Taiwan-LLM-13B.gguf:/app/models/default.gguf
+      #- ./models/Taiwan-LLM-7B:/app/models/Taiwan-LLM-7B
